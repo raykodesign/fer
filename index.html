@@ -47,6 +47,9 @@
                 <button class="nav-btn-gold" onclick="openModal('modal-gallery')">
                     <i class="fa-solid fa-images"></i> Gallery 
                 </button>
+                <button class="nav-btn-gold" onclick="openModal('modal-married')">
+                    <i class="fa-solid fa-ring"></i> Married
+                </button>
                 <button class="nav-btn-gold" onclick="openModal('modal-friends')">
                     <i class="fa-solid fa-user-group"></i> Friends
                 </button>
@@ -72,12 +75,12 @@
             <span class="close-btn" onclick="closeModal('modal-profile')">&times;</span>
             <h3>PROFILE</h3>
             <div class="profile-details">
-                <p style="font-family: var(--font-cursive); font-size: 1.5rem; color: var(--gold);">"Ser Yo, me Encanta"</p>
+                <p style="font-family: var(--font-cursive); font-size: 1.8rem; color: var(--gold); text-align:center;">"Ser Yo, me Encanta"</p>
                 <br>
                 <ul>
                     <li><strong>Hobby:</strong> Be happy</li>
                     <li><strong>Zodiac Sign:</strong> Geminis </li>
-                    <li><strong>Nationality:</strong>Mexicana</li>
+                    <li><strong>Nationality:</strong> Mexicana</li>
                 </ul>
             </div>
         </div>
@@ -93,6 +96,28 @@
                 </div>
                 <button class="nav-arrow-gold prev-3d" onclick="moveGallery(-1)">‹</button>
                 <button class="nav-arrow-gold next-3d" onclick="moveGallery(1)">›</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-married" class="modal">
+        <div class="modal-content gold-border">
+            <span class="close-btn" onclick="closeModal('modal-married')">&times;</span>
+            <h3>MARRIED</h3>
+            
+            <div class="married-container">
+                <div class="married-photo-glow">
+                    <img src="https://xatimg.com/image/pBXVi0H14tRc.jpg" alt="Married Photo" class="married-img">
+                </div>
+    
+                <div class="married-info">
+                    <h2 class="married-name">Alex</h2>
+                    <p class="married-subname">1459724412</p>
+                    
+                    <div class="status-online">
+                        <i class="fa-solid fa-circle"></i> Online
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -139,5 +164,4 @@
     <audio id="audio" loop></audio>
     <script src="script.js"></script>
 </body>
-
 </html>
