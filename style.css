@@ -1,18 +1,18 @@
-/* --- VARIABLES: PALETA ROSA NEÓN "BARBIE/BRATZ" --- */
+/* --- VARIABLES: PALETA ROSA NEÓN --- */
 :root {
-    --gold: #ff1493;        /* Rosa Fuerte (Deep Pink) */
-    --gold-light: #ff69b4;  /* Rosa Claro (Hot Pink) */
-    --coffee: #8b008b;      /* Magenta Oscuro (para bordes) */
-    --coffee-dark: #2d0018; /* Fondo muy oscuro rojizo */
-    --cyan-blue: #ffffff;   /* Blanco puro para contrastar */
-    --black-base: #0a0005;  /* Negro con tinte rosa */
-    --black-glass: rgba(20, 0, 10, 0.95); /* Fondo casi sólido para que se lea el texto */
+    --gold: #ff1493;        /* Rosa Fuerte */
+    --gold-light: #ff69b4;  /* Rosa Claro */
+    --coffee: #8b008b;      /* Magenta Oscuro */
+    --coffee-dark: #2d0018; /* Fondo rojizo oscuro */
+    --cyan-blue: #ffffff;   /* Blanco */
+    --black-base: #0a0005;  /* Negro/Rosa */
+    --black-glass: rgba(20, 0, 10, 0.95);
     --font-tech: 'VT323', monospace;
     --font-clean: 'Montserrat', sans-serif;
     --font-cursive: 'Great Vibes', cursive;
 }
 
-/* --- CURSOR PERSONALIZADO (Corazón Rosa) --- */
+/* --- CURSOR PERSONALIZADO --- */
 * { 
     margin: 0; padding: 0; box-sizing: border-box; 
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='%23ff1493' stroke='white' stroke-width='1.5'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>") 16 16, auto !important;
@@ -38,7 +38,7 @@ body {
 #bg-video {
     width: 100%; height: 100%;
     object-fit: cover;
-    filter: blur(3px) brightness(0.6); /* Oscurecido para que se vean las letras */
+    filter: blur(3px) brightness(0.6);
     transform: scale(1.1);
 }
 .bg-overlay {
@@ -46,7 +46,7 @@ body {
     background: radial-gradient(circle, rgba(255, 20, 147, 0.1) 0%, rgba(0,0,0,0.8) 90%);
 }
 
-/* --- EFECTO MOUSE (Corazones y Estrellas) --- */
+/* --- EFECTO MOUSE (Magic Heart) --- */
 .magic-heart {
     position: absolute;
     pointer-events: none;
@@ -71,7 +71,6 @@ body {
     z-index: 2000; transition: opacity 0.8s ease;
 }
 
-/* BOTÓN NUEVO: BONITO, ROSA Y VISIBLE */
 #enter-btn {
     padding: 18px 60px;
     background: transparent;
@@ -81,7 +80,7 @@ body {
     font-weight: 700;
     letter-spacing: 3px;
     border: 3px solid var(--gold);
-    border-radius: 50px; /* Forma de pastilla */
+    border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 0 20px rgba(255, 20, 147, 0.4), inset 0 0 10px rgba(255, 20, 147, 0.2);
     text-transform: uppercase;
@@ -92,7 +91,6 @@ body {
 }
 
 #enter-btn i { color: var(--gold-light); }
-
 #enter-btn:hover {
     background: var(--gold);
     box-shadow: 0 0 50px var(--gold), 0 0 10px #fff;
@@ -102,7 +100,7 @@ body {
 }
 #enter-btn:hover i { color: #fff; transform: scale(1.2); }
 
-/* --- LAYOUT PRINCIPAL (CONTENEDOR) --- */
+/* --- LAYOUT PRINCIPAL --- */
 #main-layout {
     display: flex;
     width: 950px; max-width: 95%; height: 600px; max-height: 90vh;
@@ -118,22 +116,31 @@ body {
 
 .hidden-layout { opacity: 0; transform: scale(0.95); pointer-events: none; display: none; }
 
-/* Decoración de bordes brillantes */
+/* Decoración bordes */
 .border-line { position: absolute; z-index: 10; pointer-events: none; background: var(--gold); opacity: 0.7; box-shadow: 0 0 10px var(--gold); }
 .line-top { top: 0; left: 0; width: 100%; height: 2px; animation: shine 3s infinite; }
 .line-bottom { bottom: 0; right: 0; width: 100%; height: 2px; animation: shine 3s infinite reverse; }
+.line-left { top:0; left:0; height: 100%; width: 2px; }
+.line-right { bottom:0; right:0; height: 100%; width: 2px; }
 
 @keyframes shine { 0%,100% { opacity: 0.2; } 50% { opacity: 1; } }
 
-/* --- BARRA LATERAL (SIDEBAR) --- */
+/* --- BARRA LATERAL (AJUSTADA PARA QUE QUEPAN LOS BOTONES) --- */
 .sidebar-gold {
-    width: 320px; flex-shrink: 0; 
+    width: 300px; /* Un poco más angosta */
+    flex-shrink: 0; 
     background: rgba(20, 0, 10, 0.6);
-    padding: 40px 20px; display: flex; flex-direction: column; align-items: center;
+    /* Reduje el padding vertical de 40px a 25px para ganar espacio */
+    padding: 25px 20px; 
+    display: flex; flex-direction: column; align-items: center;
     border-right: 1px solid rgba(255, 20, 147, 0.2);
 }
 
-.profile-center-glow { width: 130px; height: 130px; margin-bottom: 20px; }
+/* Ajuste de tamaño de la foto */
+.profile-center-glow { 
+    width: 110px; height: 110px; /* Reducido de 130px */
+    margin-bottom: 15px; 
+}
 .pfp-blue {
     width: 100%; height: 100%; border-radius: 50%; object-fit: cover; 
     border: 3px solid var(--gold); 
@@ -143,7 +150,7 @@ body {
 
 .cursive-name {
     font-family: var(--font-cursive);
-    font-size: 4rem;
+    font-size: 3.5rem; /* Un pelín más pequeño */
     color: var(--gold);
     text-shadow: 0 0 15px var(--gold);
     text-align: center; margin: 0;
@@ -154,16 +161,16 @@ body {
     font-family: var(--font-tech); 
     color: #ffb6c1; 
     letter-spacing: 2px; 
-    font-size: 1.1rem; 
-    margin-bottom: 30px; 
+    font-size: 1rem; 
+    margin-bottom: 20px; /* Menos margen abajo */
     margin-top: 5px;
 }
 
-/* --- BOTONES DEL MENÚ --- */
-.nav-menu { width: 100%; display: flex; flex-direction: column; gap: 12px; }
+/* --- BOTONES DEL MENÚ (OPTIMIZADOS) --- */
+.nav-menu { width: 100%; display: flex; flex-direction: column; gap: 10px; }
 
 .nav-btn-gold {
-    width: 100%; padding: 14px 20px;
+    width: 100%; padding: 12px 20px; /* Menos padding vertical */
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 20, 147, 0.3);
     border-radius: 12px; 
@@ -172,7 +179,7 @@ body {
     font-family: var(--font-clean); font-weight: 600; 
     transition: 0.3s ease;
     display: flex; align-items: center; gap: 15px;
-    text-transform: uppercase; font-size: 0.9rem;
+    text-transform: uppercase; font-size: 0.85rem; /* Texto un poco más fino */
     cursor: pointer;
 }
 
@@ -206,7 +213,6 @@ body {
     line-height: 1.4;
     text-shadow: 2px 2px 4px #000;
 }
-
 .cursor { color: var(--gold); font-weight: bold; font-size: 2rem; animation: blink 1s infinite;}
 
 /* --- MODALES --- */
@@ -215,14 +221,13 @@ body {
     display: flex; justify-content: center; align-items: center;
     z-index: 3000; 
     opacity: 0; pointer-events: none; transition: 0.4s;
-    background: rgba(0,0,0,0.4); /* Fondo general más suave */
+    background: rgba(0,0,0,0.4); 
 }
 .modal.active { opacity: 1; pointer-events: auto; }
 
-/* --- MODIFICADO: ESTILO VIDRIO (GLASSMORPHISM) --- */
 .modal-content.gold-border {
-    background: rgba(26, 5, 16, 0.65); /* Fondo semitransparente oscuro */
-    backdrop-filter: blur(16px); /* Efecto borroso detrás */
+    background: rgba(26, 5, 16, 0.65);
+    backdrop-filter: blur(16px); 
     -webkit-backdrop-filter: blur(16px);
     border: 2px solid var(--gold);
     padding: 40px; width: 90%; max-width: 700px;
@@ -241,7 +246,6 @@ body {
     font-size: 1.8rem; letter-spacing: 2px; text-shadow: 0 0 10px var(--gold);
 }
 
-/* LISTAS Y TEXTOS DEL MODAL */
 .profile-details ul { list-style: none; }
 .profile-details li { margin-bottom: 10px; font-size: 1.1rem; color: #ddd; }
 .profile-details strong { color: var(--gold-light); display: inline-block; width: 140px;}
@@ -286,15 +290,8 @@ body {
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* --- NUEVOS ESTILOS DEL REPRODUCTOR DE MÚSICA (GLASS & VINYL) --- */
-.music-player-gold {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 10px;
-}
-
-/* El Disco de Vinilo */
+/* --- REPRODUCTOR DE MÚSICA --- */
+.music-player-gold { display: flex; align-items: center; gap: 30px; padding: 10px; }
 .vinyl-record-gold {
     width: 140px; height: 140px;
     border-radius: 50%;
@@ -302,80 +299,75 @@ body {
     border: 3px solid var(--gold);
     box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
     display: flex; justify-content: center; align-items: center;
-    position: relative;
-    flex-shrink: 0;
-    transition: transform 0.5s ease;
+    position: relative; flex-shrink: 0; transition: transform 0.5s ease;
 }
-
-/* La etiqueta del centro del disco */
 .vinyl-record-gold::after {
-    content: ''; position: absolute;
-    width: 40px; height: 40px;
-    background: var(--gold-light);
-    border-radius: 50%;
-    border: 2px solid #fff;
+    content: ''; position: absolute; width: 40px; height: 40px;
+    background: var(--gold-light); border-radius: 50%; border: 2px solid #fff;
 }
-
-.vinyl-record-gold i {
-    font-size: 3rem; color: rgba(255,255,255,0.1); z-index: 2;
-}
-
-/* Animación de giro */
-.vinyl-record-gold.spinning {
-    animation: spinVinyl 4s linear infinite;
-}
+.vinyl-record-gold i { font-size: 3rem; color: rgba(255,255,255,0.1); z-index: 2; }
+.vinyl-record-gold.spinning { animation: spinVinyl 4s linear infinite; }
 @keyframes spinVinyl { 100% { transform: rotate(360deg); } }
 
-/* Info de la canción */
-.song-info-gold {
-    flex-grow: 1;
-    display: flex; flex-direction: column; gap: 10px;
-}
-.song-info-gold h4 {
-    font-family: var(--font-clean); color: #fff; font-size: 1.4rem; margin: 0;
-    text-shadow: 0 0 5px var(--gold);
-}
-.song-info-gold p {
-    font-family: var(--font-tech); color: #ffb6c1; font-size: 1rem; margin: 0;
-}
+.song-info-gold { flex-grow: 1; display: flex; flex-direction: column; gap: 10px; }
+.song-info-gold h4 { font-family: var(--font-clean); color: #fff; font-size: 1.4rem; margin: 0; text-shadow: 0 0 5px var(--gold); }
+.song-info-gold p { font-family: var(--font-tech); color: #ffb6c1; font-size: 1rem; margin: 0; }
 
-/* Controles */
-.controls-gold {
-    display: flex; gap: 20px; margin-top: 10px;
-}
+.controls-gold { display: flex; gap: 20px; margin-top: 10px; }
 .controls-gold button {
-    background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;
-    transition: 0.3s;
+    background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; transition: 0.3s;
 }
-.controls-gold button:hover {
-    color: var(--gold); text-shadow: 0 0 10px var(--gold); transform: scale(1.2);
-}
+.controls-gold button:hover { color: var(--gold); text-shadow: 0 0 10px var(--gold); transform: scale(1.2); }
 
-/* Barra de progreso */
 .fake-bar-gold {
-    width: 100%; height: 6px;
-    background: rgba(255,255,255,0.1);
-    border-radius: 10px; margin-top: 10px;
-    overflow: hidden; cursor: pointer;
+    width: 100%; height: 6px; background: rgba(255,255,255,0.1);
+    border-radius: 10px; margin-top: 10px; overflow: hidden; cursor: pointer;
 }
 .fill-gold {
-    width: 0%; height: 100%;
-    background: var(--gold);
-    box-shadow: 0 0 10px var(--gold);
-    transition: width 0.1s linear;
+    width: 0%; height: 100%; background: var(--gold);
+    box-shadow: 0 0 10px var(--gold); transition: width 0.1s linear;
+}
+
+/* --- ESTILOS SECCIÓN MARRIED (NUEVO) --- */
+.married-container {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center; gap: 20px; padding: 10px;
+}
+.married-photo-glow {
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    border: 4px solid var(--gold);
+    box-shadow: 0 0 35px rgba(255, 20, 147, 0.5);
+    overflow: hidden;
+    animation: float 4s ease-in-out infinite;
+}
+.married-img { width: 100%; height: 100%; object-fit: cover; }
+
+.married-name {
+    font-family: var(--font-cursive); font-size: 3.5rem; color: var(--gold);
+    margin: 0; line-height: 1; text-shadow: 0 0 15px var(--gold);
+}
+.married-subname {
+    font-family: var(--font-clean); font-size: 1.2rem; color: #ffb6c1;
+    letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; margin-bottom: 15px; opacity: 0.9;
+}
+
+.status-online {
+    font-family: var(--font-tech); color: #00ff00; font-size: 1.2rem;
+    text-shadow: 0 0 8px #00ff00; display: inline-block;
+    background: rgba(0, 255, 0, 0.1); padding: 5px 15px;
+    border-radius: 20px; border: 1px solid rgba(0, 255, 0, 0.3);
+}
+.status-online i {
+    font-size: 0.7rem; vertical-align: middle; margin-right: 5px;
+    animation: blink 2s infinite; 
 }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
     #main-layout { flex-direction: column; width: 95%; height: 90vh; overflow-y: auto; }
     .sidebar-gold { width: 100%; padding: 20px; border-right: none; border-bottom: 2px solid var(--coffee); }
-    .nav-menu { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .nav-menu { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 10px; }
     .nav-btn-gold { width: auto; font-size: 0.8rem; }
     .content-area-gold { padding: 30px; }
-    .center-title-fem { font-size: 3.5rem; }
-}
-
-@media (max-width: 600px) {
-    .music-player-gold { flex-direction: column; text-align: center; }
-    .controls-gold { justify-content: center; }
 }
