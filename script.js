@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- MAQUINA DE ESCRIBIR ---
-    const welcomeMsg = "Soy única nadie es como yo, soy irrepetible, soy maravillosa, soy imperfecta, creada por un Dios perfecto que sigue trabajando en mi.";
+    const welcomeMsg = "Mis sueños más grandes se hacen pequeños cuando conozco lo que Dios quiere hacer conmigo.";
     function initTypewriter() {
         let i = 0;
         typingText.innerHTML = "";
@@ -174,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- GALERÍA 3D ---
     const galleryImages = [
         "https://xatimg.com/image/BigAHuCKj4Dg.jpg",
-        "https://xatimg.com/image/vNNknzsPmXd4.jpg",
     ];
     
     const carouselTrack = document.getElementById('carousel-3d-track');
@@ -217,3 +216,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', updateGallery3D);
 });
+
