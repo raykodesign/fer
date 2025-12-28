@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // AQUÍ ESTÁ EL CAMBIO:
     const songs = [
         {
-            title: "Te Pense, Te Soñe y Te Encontre",  // Cambia el Título aquí
-            artist: "Balada",             // Cambia el Artista aquí
-            src: "audio/Te Pense, Te Soñe y Te Encontre.mp3" // <--- PON AQUÍ EL NOMBRE EXACTO DE TU ARCHIVO
+            title: "Jesús",  // Cambia el Título aquí
+            artist: "Sarai Rivera",             // Cambia el Artista aquí
+            src: "audio/Sarai Rivera  Jesus.mp3" // <--- PON AQUÍ EL NOMBRE EXACTO DE TU ARCHIVO
         },
         // Si quieres agregar otra canción de la carpeta audio, copia y pega esto:
         /*
@@ -216,4 +216,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', updateGallery3D);
 });
+
 
